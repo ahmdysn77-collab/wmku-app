@@ -22,8 +22,8 @@ function useRealTime() {
 }
 
 const S = {
-  screen: { fontFamily: "'Inter','SF Pro Display',-apple-system,sans-serif", background: "#0A0A0A", minHeight: "100vh", minHeight: "100dvh", display: "flex", justifyContent: "center", alignItems: "flex-start" },
-  phone: { width: "100%", maxWidth: "430px", minHeight: "100vh", minHeight: "100dvh", background: "#FAFAF8", display: "flex", flexDirection: "column", position: "relative" },
+  screen: { fontFamily: "'Inter','SF Pro Display',-apple-system,sans-serif", background: "#0A0A0A", minHeight: "100dvh", display: "flex", justifyContent: "center", alignItems: "flex-start" },
+  phone: { width: "100%", maxWidth: "430px", minHeight: "100dvh", background: "#FAFAF8", display: "flex", flexDirection: "column", position: "relative" },
   statusBar: { background: "#1A0F00", padding: "14px 20px 10px", display: "flex", justifyContent: "space-between", alignItems: "center", position: "sticky", top: 0, zIndex: 20 },
   input: { width: "100%", background: "#F5F5F3", border: "1.5px solid #E5E5E0", borderRadius: "14px", padding: "16px", fontSize: "16px", fontFamily: "inherit", color: "#1A1A1A", outline: "none", boxSizing: "border-box", WebkitAppearance: "none" },
   btnPrimary: { width: "100%", background: "#1A0F00", color: "#F5ECD7", border: "none", borderRadius: "14px", padding: "18px", fontSize: "16px", fontFamily: "inherit", fontWeight: "500", cursor: "pointer", WebkitTapHighlightColor: "transparent" },
