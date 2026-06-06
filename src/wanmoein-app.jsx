@@ -240,10 +240,16 @@ function MainApp({ user, onLogout }) {
                   <div style={{ background: "#FFF", borderRadius: "16px", border: "1px solid #EBEBEB", overflow: "hidden" }}>
                     {items.map((item, idx) => {
                       const price = item.item_variants?.[0]?.price || 0;
+                      const foto = item.image?.url || null;
                       return (
-                        <div key={item.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 18px", borderBottom: idx < items.length - 1 ? "1px solid #F5F5F3" : "none" }}>
-                          <p style={{ margin: 0, fontSize: "15px", color: "#1A1A1A" }}>{item.name}</p>
-                          {price > 0 && <p style={{ margin: 0, fontSize: "14px", color: "#C8860A", fontWeight: "500", flexShrink: 0, marginLeft: "12px" }}>Rp{price.toLocaleString()}</p>}
+                        <div key={item.id} style={{ display: "flex", alignItems: "center", padding: "12px 18px", borderBottom: idx < items.length - 1 ? "1px solid #F5F5F3" : "none", gap: "12px" }}>
+                          {foto && (
+                            <img src={foto} alt={item.name} style={{ width: 48, height: 48, borderRadius: "10px", objectFit: "cover", flexShrink: 0 }} onError={e => e.target.style.display = "none"} />
+                          )}
+                          <div style={{ flex: 1 }}>
+                            <p style={{ margin: 0, fontSize: "15px", color: "#1A1A1A" }}>{item.name}</p>
+                          </div>
+                          {price > 0 && <p style={{ margin: 0, fontSize: "14px", color: "#C8860A", fontWeight: "500", flexShrink: 0 }}>Rp{price.toLocaleString()}</p>}
                         </div>
                       );
                     })}
