@@ -243,9 +243,7 @@ function MainApp({ user, onLogout }) {
                       const foto = item.image?.url ? item.image.url.split('?')[0] : null;
                       return (
                         <div key={item.id} style={{ display: "flex", alignItems: "center", padding: "12px 18px", borderBottom: idx < items.length - 1 ? "1px solid #F5F5F3" : "none", gap: "12px" }}>
-                          {foto && (
-                            <img src={foto} alt={item.name} style={{ width: 48, height: 48, borderRadius: "10px", objectFit: "cover", flexShrink: 0 }} onError={e => e.target.style.display = "none"} />
-                          )}
+                          <img src={foto || LOGO_URL} alt={item.name} style={{ width: 48, height: 48, borderRadius: "10px", objectFit: "cover", flexShrink: 0 }} onError={e => { e.target.src = LOGO_URL; }} />
                           <div style={{ flex: 1 }}>
                             <p style={{ margin: 0, fontSize: "15px", color: "#1A1A1A" }}>{item.name}</p>
                           </div>
