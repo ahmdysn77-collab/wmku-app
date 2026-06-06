@@ -276,10 +276,11 @@ function MainApp({ user, onLogout }) {
                         <p style={{ margin: "0 0 6px", fontSize: "20px", color: isDone ? "#999" : "#F5ECD7", fontWeight: "300" }}>Diskon Rp{discountAmt.toLocaleString()}</p>
                         {minPurchase > 0 && <p style={{ margin: "0 0 18px", fontSize: "13px", color: isDone ? "#AAA" : "rgba(245,236,215,0.5)" }}>Min. pembelian Rp{minPurchase.toLocaleString()}</p>}
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                          <p style={{ margin: 0, fontSize: "14px", color: isDone ? "#AAA" : "#C8860A", fontWeight: "500" }}>{pointsNeeded} poin</p>
-                          <button onClick={() => canRedeem && !isDone && setRedeemed([...redeemed, i])} style={{ background: isDone ? "transparent" : canRedeem ? "#C8860A" : "rgba(255,255,255,0.08)", color: isDone ? "#AAA" : canRedeem ? "#FFF" : "rgba(245,236,215,0.3)", border: isDone ? "1px solid #DDD" : "none", borderRadius: "24px", padding: "10px 20px", cursor: canRedeem && !isDone ? "pointer" : "default", fontSize: "13px", fontFamily: "inherit", fontWeight: "500", WebkitTapHighlightColor: "transparent" }}>
-                            {isDone ? "Sudah ditukar" : canRedeem ? "Tukar" : `Kurang ${pointsNeeded - user.points} poin`}
-                          </button>
+                          <p style={{ margin: 0, fontSize: "14px", color: "#C8860A", fontWeight: "500" }}>{pointsNeeded} poin</p>
+                          {canRedeem
+                            ? <span style={{ background: "rgba(200,134,10,0.2)", color: "#F5D393", borderRadius: "12px", padding: "8px 12px", fontSize: "12px", lineHeight: 1.4, textAlign: "center" }}>Poin cukup, tukarkan<br/>di gerai WanMoein</span>
+                            : <span style={{ color: "rgba(245,236,215,0.4)", fontSize: "12px" }}>Kurang {pointsNeeded - user.points} poin</span>
+                          }
                         </div>
                       </div>
                     );
