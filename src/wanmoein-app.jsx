@@ -240,7 +240,7 @@ function MainApp({ user, onLogout }) {
                   <div style={{ background: "#FFF", borderRadius: "16px", border: "1px solid #EBEBEB", overflow: "hidden" }}>
                     {items.map((item, idx) => {
                       const price = item.item_variants?.[0]?.price || 0;
-                      const foto = item.image?.url || null;
+                      const foto = item.image?.url ? item.image.url.split('?')[0] : null;
                       return (
                         <div key={item.id} style={{ display: "flex", alignItems: "center", padding: "12px 18px", borderBottom: idx < items.length - 1 ? "1px solid #F5F5F3" : "none", gap: "12px" }}>
                           {foto && (
